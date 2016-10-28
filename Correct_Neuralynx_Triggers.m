@@ -42,6 +42,8 @@ for i = 1:length(tri_rec)
     
 end
 
+%delete some trials:
+
 signal(:,find(tr2keep == 0),:) = [];
 
 %tr2keep contains 1 if the trigger is real and corresponds to an
