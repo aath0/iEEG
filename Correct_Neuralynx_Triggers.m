@@ -14,7 +14,7 @@ p.path='D:\Data\Intracranial\2015-01-16_16-56-44\';
 s_id = '101';
 
 
-load([p.path, 'm_list'])
+load([p.path, 'm_list']) %this is a contact list
 load([p.path, 'triggers_', code, '_S', s_id]) %a file containing the ground truth triggers (tri)
 cc = 1; %load a random contact file (they all contain the neuralynx data, TTLs)
 nameChan = contacts_list{cc,:};
