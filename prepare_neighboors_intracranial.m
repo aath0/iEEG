@@ -1,14 +1,16 @@
-p_id = 'MC';
+p_id = 'M';
 
 filep_g = 'D:\Data\old_studies\Intracranial_GMMN\'
 filep = [filep_g, p_id, '\models\'];
 
 bb = 1;
-%load pre-processed data:
+%load fieldtrip data:
 load([filep,'iEEG_bip_block', num2str(bb),'_f.mat'])
 
+%total number of contacts
 nchan = length(iEEGf.label);
-strip_length = 7; %after bipolar ref
+strip_length = 7; % contacts per stripe (after bipolar ref, if appropriate)
+
 connectivity = zeros(nchan,nchan);
 
 for ch = 1:nchan
@@ -47,7 +49,7 @@ for ch = 1:nchan
     end
 end
 
-save([filep,'channels_neighbours.mat'],'neighbours','connectivity')
+save([filep,'channels_connectivity.mat'],'neighbours','connectivity')
 
 
 
